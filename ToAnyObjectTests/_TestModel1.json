@@ -1,0 +1,658 @@
+{
+  "nsNum" : 999,
+  "testEnumOpt" : "Case1",
+  "voidOpt" : null,
+  "int" : 1,
+  "nsStrOpt" : "NSString",
+  "intOpt" : 1,
+  "nsArrOpt" : [
+    1,
+    "NS-one"
+  ],
+  "dict" : {
+    "key1" : "one",
+    "key2" : 222
+  },
+  "doubleOpt" : 0.1,
+  "boolOpt" : true,
+  "testModel2DictOpt" : {
+    "test2-1" : {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    },
+    "test2-2" : {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    }
+  },
+  "nsStr" : "NSString",
+  "testEnum" : "Case1",
+  "testModel2Opt" : {
+    "nsStr" : "NSString",
+    "testEnum" : "Case1",
+    "nsNum" : 999,
+    "nsDict" : {
+      "NS-key2" : 222,
+      "NS-key1" : "NS-one"
+    },
+    "testEnumOpt" : "Case1",
+    "nsDictOpt" : {
+      "NS-key2" : 222,
+      "NS-key1" : "NS-one"
+    },
+    "arrOpt" : [
+      1,
+      "one"
+    ],
+    "voidOpt" : null,
+    "arr" : [
+      1,
+      "one"
+    ],
+    "int" : 1,
+    "double" : 0.1,
+    "dictOpt" : {
+      "key1" : "one",
+      "key2" : 222
+    },
+    "strOpt" : "Swift.String",
+    "nsStrOpt" : "NSString",
+    "intOpt" : 1,
+    "bool" : true,
+    "nsArr" : [
+      1,
+      "NS-one"
+    ],
+    "nsArrOpt" : [
+      1,
+      "NS-one"
+    ],
+    "str" : "Swift.String",
+    "dict" : {
+      "key1" : "one",
+      "key2" : 222
+    },
+    "doubleOpt" : 0.1,
+    "boolOpt" : true,
+    "nsNumOpt" : 999,
+    "void" : null
+  },
+  "nsDict" : {
+    "NS-key2" : 222,
+    "NS-key1" : "NS-one"
+  },
+  "testModel2s" : [
+    {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    },
+    {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    }
+  ],
+  "nsDictOpt" : {
+    "NS-key2" : 222,
+    "NS-key1" : "NS-one"
+  },
+  "arrOpt" : [
+    1,
+    "one",
+    {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    }
+  ],
+  "arr" : [
+    1,
+    "one"
+  ],
+  "double" : 0.1,
+  "dictOpt" : {
+    "key1" : "one",
+    "key2" : 222,
+    "key3" : {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    }
+  },
+  "strOpt" : "Swift.String",
+  "nsArr" : [
+    1,
+    "NS-one"
+  ],
+  "testModel2Dict" : {
+    "test2-1" : {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    },
+    "test2-2" : {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    }
+  },
+  "bool" : true,
+  "str" : "Swift.String",
+  "testModel2" : {
+    "nsStr" : "NSString",
+    "testEnum" : "Case1",
+    "nsNum" : 999,
+    "nsDict" : {
+      "NS-key2" : 222,
+      "NS-key1" : "NS-one"
+    },
+    "testEnumOpt" : "Case1",
+    "nsDictOpt" : {
+      "NS-key2" : 222,
+      "NS-key1" : "NS-one"
+    },
+    "arrOpt" : [
+      1,
+      "one"
+    ],
+    "voidOpt" : null,
+    "arr" : [
+      1,
+      "one"
+    ],
+    "int" : 1,
+    "double" : 0.1,
+    "dictOpt" : {
+      "key1" : "one",
+      "key2" : 222
+    },
+    "strOpt" : "Swift.String",
+    "nsStrOpt" : "NSString",
+    "intOpt" : 1,
+    "bool" : true,
+    "nsArr" : [
+      1,
+      "NS-one"
+    ],
+    "nsArrOpt" : [
+      1,
+      "NS-one"
+    ],
+    "str" : "Swift.String",
+    "dict" : {
+      "key1" : "one",
+      "key2" : 222
+    },
+    "doubleOpt" : 0.1,
+    "boolOpt" : true,
+    "nsNumOpt" : 999,
+    "void" : null
+  },
+  "testModel2sOpt" : [
+    {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    },
+    {
+      "nsStr" : "NSString",
+      "testEnum" : "Case1",
+      "nsNum" : 999,
+      "nsDict" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "testEnumOpt" : "Case1",
+      "nsDictOpt" : {
+        "NS-key2" : 222,
+        "NS-key1" : "NS-one"
+      },
+      "arrOpt" : [
+        1,
+        "one"
+      ],
+      "voidOpt" : null,
+      "arr" : [
+        1,
+        "one"
+      ],
+      "int" : 1,
+      "double" : 0.1,
+      "dictOpt" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "strOpt" : "Swift.String",
+      "nsStrOpt" : "NSString",
+      "intOpt" : 1,
+      "bool" : true,
+      "nsArr" : [
+        1,
+        "NS-one"
+      ],
+      "nsArrOpt" : [
+        1,
+        "NS-one"
+      ],
+      "str" : "Swift.String",
+      "dict" : {
+        "key1" : "one",
+        "key2" : 222
+      },
+      "doubleOpt" : 0.1,
+      "boolOpt" : true,
+      "nsNumOpt" : 999,
+      "void" : null
+    }
+  ],
+  "nsNumOpt" : 999,
+  "void" : null
+}
