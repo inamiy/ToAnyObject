@@ -75,4 +75,4 @@ See [Test Models](https://github.com/inamiy/ToAnyObject/blob/master/ToAnyObjectT
 
 ## Licence
 
-[MIT](https://github.com/ReactKit/ReactKit/blob/master/LICENSE)
+[MIT](https://github.com/inamiy/ToAnyObject/blob/master/LICENSE)
