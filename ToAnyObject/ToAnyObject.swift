@@ -36,7 +36,7 @@ public protocol ToAnyObjectType
 public typealias ModelPropertyName = String
 public typealias NSDictionaryKeyName = String
 public typealias ModelToDictValueTransform = Any -> Any
-public typealias Mapping = [ModelPropertyName : (NSDictionaryKeyName, ModelToDictValueTransform)]
+public typealias Mapping = [ModelPropertyName : (NSDictionaryKeyName, ModelToDictValueTransform)?]
 
 ///
 /// Conform custom model type (e.g. struct, class) to this protocol for better `toAnyObject()`.
@@ -119,8 +119,10 @@ private func _toNSDictionary(mirror: Mirror, mapping: Mapping) -> NSDictionary
     var dict: [String : AnyObject] = [:]
     for (key, value) in mirror.children {
         if let key = key {
-            if let (newKey, transform) = mapping[key] {
-                dict[newKey] = toAnyObject(transform(value))
+            if let tuple = mapping[key] {
+                if let (newKey, transform) = tuple {
+                    dict[newKey] = toAnyObject(transform(value))
+                }
             }
             else {
                 dict[key] = toAnyObject(value)
