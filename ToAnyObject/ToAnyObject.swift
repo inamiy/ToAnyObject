@@ -11,7 +11,7 @@ import Foundation
 //
 // Usage:
 // 1. Conform your model type (e.g. struct, class) to `AutoNSDictionaryType`.
-// 2. Implement `static var customMapping: [String : (String, Any -> Any)]` if needed.
+// 2. Implement `var customMapping: [String : (String, Any -> Any)]` if needed.
 // 3. Conform non-ObjC types (e.g. enum) to `ToAnyObjectType`.
 // 4. Call `let obj = toAnyObject(_testModel)`.
 // 5. That's it!
@@ -45,19 +45,19 @@ public protocol AutoNSDictionaryType: ToAnyObjectType
 {
     /// Additional mapping for manually converting model's property name
     /// to NSDictionary key name using transforming closure.
-    static var customMapping: Mapping { get }
+    var customMapping: Mapping { get }
 }
 
 extension AutoNSDictionaryType
 {
-    public static var customMapping: Mapping
+    public var customMapping: Mapping
     {
         return [:]
     }
     
     public func toAnyObject() -> AnyObject
     {
-        return _toNSDictionary(Mirror(reflecting: self), mapping: self.dynamicType.customMapping)
+        return _toNSDictionary(Mirror(reflecting: self), mapping: self.customMapping)
     }
 }
 

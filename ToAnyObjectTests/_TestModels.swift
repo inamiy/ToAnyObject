@@ -105,7 +105,7 @@ struct MappingTestModel: AutoNSDictionaryType
     let isAuthor: Bool = true
     let secret: String = "4649"
     
-    static var customMapping: Mapping
+    var customMapping: Mapping
     {
         return [
             "age" : ("real_age", { _ in 0x21 }),
