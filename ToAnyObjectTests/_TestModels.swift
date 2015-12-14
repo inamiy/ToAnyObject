@@ -103,13 +103,17 @@ struct MappingTestModel: AutoNSDictionaryType
     let name: String = "inamiy"
     let age: Int = 21
     let isAuthor: Bool = true
+    let message: String = "Hello"
     let secret: String = "4649"
     
     var customMapping: Mapping
     {
+        let newMessage = "\(self.message) World!"
+        
         return [
-            "age" : ("real_age", { _ in 0x21 }),
-            "isAuthor" : ("is_author", { $0 }), // NOTE: use `{ $0 }` for identity transform
+            "age" : ("real_age", 0x21),
+            "isAuthor" : ("is_author", self.isAuthor),
+            "message" : ("message", newMessage),
             "secret" : nil
         ]
     }

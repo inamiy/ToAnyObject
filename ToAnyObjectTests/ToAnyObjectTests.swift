@@ -69,11 +69,13 @@ class ToAnyObjectTests: XCTestCase
         XCTAssertEqual(model.name, "inamiy")
         XCTAssertEqual(model.age, 21)
         XCTAssertEqual(model.isAuthor, true)
+        XCTAssertEqual(model.message, "Hello")
         XCTAssertEqual(model.secret, "4649")
         
-        XCTAssertEqual((obj_["name"] as! NSString), "inamiy")
+        XCTAssertEqual((obj_["name"] as! String), "inamiy")
         XCTAssertEqual((obj_["real_age"] as! Int), 0x21)
         XCTAssertEqual((obj_["is_author"] as! Bool), true)
+        XCTAssertEqual((obj_["message"] as! String), "Hello World!")
         XCTAssertNil(obj_["secret"])
     }
     
