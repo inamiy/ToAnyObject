@@ -65,7 +65,7 @@ let jsonString = toJSONString(model)
 ## Usage
 
 1. Conform your model type (e.g. struct, class) to `AutoNSDictionaryType`.
-2. Implement `var customMapping: [String : (String, Any -> Any)]` if needed.
+2. Implement `var customMapping: [String : (String, Any)]` if needed.
 3. Conform non-ObjC types (e.g. enum) to `ToAnyObjectType`.
 4. Call `let obj = toAnyObject(_testModel)`.
 5. That's it!
