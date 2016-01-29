@@ -39,7 +39,7 @@ public protocol ToAnyObjectType
 public typealias Mapping = [String : (String, Any)?]
 
 ///
-/// Conform custom model type (e.g. struct, class) to this protocol for better `toAnyObject()`.
+/// Conform custom model type (e.g. struct, class) to this protocol for better `toAnyObject()` (creates NSDictionary).
 ///
 public protocol AutoNSDictionaryType: ToAnyObjectType
 {
@@ -57,31 +57,27 @@ extension AutoNSDictionaryType
     
     public func toAnyObject() -> AnyObject
     {
-        return _toNSDictionary(Mirror(reflecting: self), mapping: self.customMapping)
+        return _toDictionary(Mirror(reflecting: self), mapping: self.customMapping)
     }
 }
 
 // MARK: toAnyObject
 
 /// Convert Any -> AnyObject using Mirror API.
-public func toAnyObject(var any: Any) -> AnyObject
+public func toAnyObject(any: Any) -> AnyObject
 {
-    var mirror = Mirror(reflecting: any)
-    
-    // unwrap Optional if needed
-    while mirror.displayStyle == .Optional {
-        if mirror.children.count == 0 { return NSNull() }
-        (_, any) = mirror.children.first!
-        
-        mirror = Mirror(reflecting: any)
-    }
-    
     // use user-implemented `toAnyObject()` if possible
     if let any = any as? ToAnyObjectType {
         return any.toAnyObject()
     }
     
+    let mirror = Mirror(reflecting: any)
+    
     switch mirror.displayStyle {
+        
+        case .Some(.Optional):
+            
+            return mirror.children.first.map { toAnyObject($0.1) } ?? NSNull()
         
         case .Some(.Collection):   // e.g. Array, NSArray
             
@@ -96,11 +92,11 @@ public func toAnyObject(var any: Any) -> AnyObject
                 }
                 // NOTE: ObjC-type-tuple casting i.e. `keyValue as? (String, AnyObject)` doesn't work
                 else {
-                    let mirror = Mirror(reflecting: keyValue)
-                    let index0 = mirror.children.startIndex
-                    let (_, key) = mirror.children[index0]
-                    let (_, value) = mirror.children[index0.successor()]
-                    if let key = key as? String {
+                    let keyValueArray = Mirror(reflecting: keyValue).children
+                        .prefix(2)  // NOTE: children should have [(_, key), (_, value)]
+                        .map { $1 }
+                    if let key = keyValueArray[0] as? String {
+                        let value = keyValueArray[1]
                         dict[key] = toAnyObject(value) ?? NSNull()
                     }
                 }
@@ -114,8 +110,10 @@ public func toAnyObject(var any: Any) -> AnyObject
 
 // MARK: Private
 
-private func _toNSDictionary(mirror: Mirror, mapping: Mapping) -> NSDictionary
+private func _toDictionary(mirror: Mirror, mapping: Mapping) -> [String : AnyObject]
 {
+    let superDict = mirror.superclassMirror().map { _toDictionary($0, mapping: mapping) } ?? [:]
+    
     var dict: [String : AnyObject] = [:]
     for (key, value) in mirror.children {
         if let key = key {
@@ -130,5 +128,10 @@ private func _toNSDictionary(mirror: Mirror, mapping: Mapping) -> NSDictionary
             }
         }
     }
+    
+    for (key, value) in superDict {
+        dict[key] = value
+    }
+    
     return dict
 }

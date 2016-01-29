@@ -29,6 +29,25 @@ class ToAnyObjectTests: XCTestCase
         XCTAssertTrue(obj.isEqual(fileJSONObj_))
     }
     
+    func test_toAnyObject_classModel()
+    {
+        let obj = toAnyObject(TestClassModel())
+        
+        let fileJSONObj = NSBundle(forClass: self.dynamicType).URLForResource("_TestModel1", withExtension: "json")
+            .flatMap { NSData(contentsOfURL: $0) }
+            .flatMap { try? NSJSONSerialization.JSONObjectWithData($0, options: []) }
+        
+        guard let fileJSONObj_ = fileJSONObj as? [String : AnyObject] else {
+            XCTFail()
+            return
+        }
+        
+        var fixedFileJSONObj = fileJSONObj_
+        fixedFileJSONObj["hello"] = "hello"
+        
+        XCTAssertTrue(obj.isEqual(fixedFileJSONObj))
+    }
+    
     // MARK: toJSONString
     
     func test_toJSONString()
