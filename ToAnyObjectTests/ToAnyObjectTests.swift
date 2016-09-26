@@ -17,15 +17,15 @@ class ToAnyObjectTests: XCTestCase
     {
         let obj = toAnyObject(TestModel1())
         
-        let fileJSONObj = NSBundle(forClass: self.dynamicType).URLForResource("_TestModel1", withExtension: "json")
-            .flatMap { NSData(contentsOfURL: $0) }
-            .flatMap { try? NSJSONSerialization.JSONObjectWithData($0, options: []) }
+        let fileJSONObj = Bundle(for: type(of: self)).url(forResource: "_TestModel1", withExtension: "json")
+            .flatMap { try? Data(contentsOf: $0) }
+            .flatMap { try? JSONSerialization.jsonObject(with: $0, options: []) }
         
         guard let fileJSONObj_ = fileJSONObj else {
             XCTFail()
             return
         }
-        
+
         XCTAssertTrue(obj.isEqual(fileJSONObj_))
     }
     
@@ -33,9 +33,9 @@ class ToAnyObjectTests: XCTestCase
     {
         let obj = toAnyObject(TestClassModel())
         
-        let fileJSONObj = NSBundle(forClass: self.dynamicType).URLForResource("_TestModel1", withExtension: "json")
-            .flatMap { NSData(contentsOfURL: $0) }
-            .flatMap { try? NSJSONSerialization.JSONObjectWithData($0, options: []) }
+        let fileJSONObj = Bundle(for: type(of: self)).url(forResource: "_TestModel1", withExtension: "json")
+            .flatMap { try? Data(contentsOf: $0) }
+            .flatMap { try? JSONSerialization.jsonObject(with: $0, options: []) }
         
         guard let fileJSONObj_ = fileJSONObj as? [String : AnyObject] else {
             XCTFail()
@@ -43,7 +43,7 @@ class ToAnyObjectTests: XCTestCase
         }
         
         var fixedFileJSONObj = fileJSONObj_
-        fixedFileJSONObj["hello"] = "hello"
+        fixedFileJSONObj["hello"] = "hello" as AnyObject?
         
         XCTAssertTrue(obj.isEqual(fixedFileJSONObj))
     }
@@ -52,7 +52,7 @@ class ToAnyObjectTests: XCTestCase
     
     func test_toJSONString()
     {
-        let jsonString = toJSONString(TestModel1(), options: .PrettyPrinted)
+        let jsonString = toJSONString(TestModel1(), options: .prettyPrinted)
         
         XCTAssertNotNil(jsonString)
 //        print(jsonString!)
@@ -60,7 +60,7 @@ class ToAnyObjectTests: XCTestCase
     
     func test_toJSONString_NSNull()
     {
-        let jsonString = toJSONString(NSNull(), options: .PrettyPrinted)
+        let jsonString = toJSONString(NSNull(), options: .prettyPrinted)
         
         XCTAssertNotNil(jsonString)
         XCTAssertEqual(jsonString!, "null")
@@ -68,7 +68,7 @@ class ToAnyObjectTests: XCTestCase
     
     func test_toJSONString_empty()
     {
-        let jsonString = toJSONString((), options: .PrettyPrinted)
+        let jsonString = toJSONString((), options: .prettyPrinted)
         XCTAssertNil(jsonString)
     }
     
@@ -104,7 +104,7 @@ class ToAnyObjectTests: XCTestCase
     {
         let test = TestModel1()
         
-        self.measureBlock {
+        self.measure {
             toAnyObject(test)
         }
     }
@@ -113,7 +113,7 @@ class ToAnyObjectTests: XCTestCase
     {
         let test = TestModel1()
         
-        self.measureBlock {
+        self.measure {
             toJSONString(test)
         }
     }

@@ -43,8 +43,8 @@ struct TestModel1: AutoNSDictionaryType
     let nsDict: NSDictionary = ["NS-key1" : "NS-one", "NS-key2" : 222]
     let nsDictOpt: NSDictionary? = ["NS-key1" : "NS-one", "NS-key2" : 222]
     
-    let testEnum: TestEnum = .Case1
-    let testEnumOpt: TestEnum? = .Case1
+    let testEnum: TestEnum = .case1
+    let testEnumOpt: TestEnum? = .case1
     
     let testModel2: TestModel2 = TestModel2()
     let testModel2Opt: TestModel2? = TestModel2()
@@ -86,8 +86,8 @@ struct TestModel2: AutoNSDictionaryType
     let nsDict: NSDictionary = ["NS-key1" : "NS-one", "NS-key2" : 222]
     let nsDictOpt: NSDictionary? = ["NS-key1" : "NS-one", "NS-key2" : 222]
     
-    let testEnum: TestEnum = .Case1
-    let testEnumOpt: TestEnum? = .Case1
+    let testEnum: TestEnum = .case1
+    let testEnumOpt: TestEnum? = .case1
 }
 
 //--------------------------------------------------
@@ -124,8 +124,8 @@ class TestSuperclassModel: AutoNSDictionaryType
     let nsDict: NSDictionary = ["NS-key1" : "NS-one", "NS-key2" : 222]
     let nsDictOpt: NSDictionary? = ["NS-key1" : "NS-one", "NS-key2" : 222]
     
-    let testEnum: TestEnum = .Case1
-    let testEnumOpt: TestEnum? = .Case1
+    let testEnum: TestEnum = .case1
+    let testEnumOpt: TestEnum? = .case1
     
     let testModel2: TestModel2 = TestModel2()
     let testModel2Opt: TestModel2? = TestModel2()
@@ -149,12 +149,12 @@ class TestClassModel: TestSuperclassModel
 
 enum TestEnum: ToAnyObjectType
 {
-    case Case1
+    case case1
     
     func toAnyObject() -> AnyObject
     {
         switch self {
-            case .Case1: return "Case1"
+            case .case1: return "Case1" as AnyObject
         }
     }
 }

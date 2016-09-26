@@ -10,18 +10,18 @@ import Foundation
 
 // MARK: toJSONData/String
 
-public func toJSONData(value: Any, options: NSJSONWritingOptions = []) -> NSData?
+public func toJSONData(_ value: Any, options: JSONSerialization.WritingOptions = []) -> Data?
 {
     guard value is () == false else { return nil }
     guard value is NSNull == false else {
-        return "null".dataUsingEncoding(NSUTF8StringEncoding)
+        return "null".data(using: String.Encoding.utf8)
     }
     
-    return try? NSJSONSerialization.dataWithJSONObject(toAnyObject(value), options: options)
+    return try? JSONSerialization.data(withJSONObject: toAnyObject(value), options: options)
 }
 
-public func toJSONString(value: Any, options: NSJSONWritingOptions = []) -> String?
+public func toJSONString(_ value: Any, options: JSONSerialization.WritingOptions = []) -> String?
 {
     return toJSONData(value, options: options)
-        .flatMap { NSString(data: $0, encoding: NSUTF8StringEncoding) as? String }
+        .flatMap { NSString(data: $0, encoding: String.Encoding.utf8.rawValue) as? String }
 }

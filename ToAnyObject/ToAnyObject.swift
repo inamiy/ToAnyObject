@@ -57,14 +57,14 @@ extension AutoNSDictionaryType
     
     public func toAnyObject() -> AnyObject
     {
-        return _toDictionary(Mirror(reflecting: self), mapping: self.customMapping)
+        return _toDictionary(Mirror(reflecting: self), mapping: self.customMapping) as AnyObject
     }
 }
 
 // MARK: toAnyObject
 
 /// Convert Any -> AnyObject using Mirror API.
-public func toAnyObject(any: Any) -> AnyObject
+public func toAnyObject(_ any: Any) -> AnyObject
 {
     // use user-implemented `toAnyObject()` if possible
     if let any = any as? ToAnyObjectType {
@@ -75,20 +75,20 @@ public func toAnyObject(any: Any) -> AnyObject
     
     switch mirror.displayStyle {
         
-        case .Some(.Optional):
+        case .some(.optional):
             
             return mirror.children.first.map { toAnyObject($0.1) } ?? NSNull()
         
-        case .Some(.Collection):   // e.g. Array, NSArray
+        case .some(.collection):   // e.g. Array, NSArray
             
-            return mirror.children.map { toAnyObject($1) }
+            return mirror.children.map { toAnyObject($1) } as AnyObject
         
-        case .Some(.Dictionary):   // e.g. Dictionary, NSDictionary
+        case .some(.dictionary):   // e.g. Dictionary, NSDictionary
             
             var dict: [String : AnyObject] = [:]
             for (_, keyValue) in mirror.children {
                 if let (key, value) = keyValue as? (String, Any) {
-                    dict[key] = toAnyObject(value) ?? NSNull()
+                    dict[key] = toAnyObject(value)
                 }
                 // NOTE: ObjC-type-tuple casting i.e. `keyValue as? (String, AnyObject)` doesn't work
                 else {
@@ -97,22 +97,23 @@ public func toAnyObject(any: Any) -> AnyObject
                         .map { $1 }
                     if let key = keyValueArray[0] as? String {
                         let value = keyValueArray[1]
-                        dict[key] = toAnyObject(value) ?? NSNull()
+                        dict[key] = toAnyObject(value)
                     }
                 }
             }
-            return dict
+            return dict as AnyObject
         
         default:
-            return any as? AnyObject ?? NSNull()
+            if any is Void { return NSNull() }
+            return any as AnyObject
     }
 }
 
 // MARK: Private
 
-private func _toDictionary(mirror: Mirror, mapping: Mapping) -> [String : AnyObject]
+private func _toDictionary(_ mirror: Mirror, mapping: Mapping) -> [String : AnyObject]
 {
-    let superDict = mirror.superclassMirror().map { _toDictionary($0, mapping: mapping) } ?? [:]
+    let superDict = mirror.superclassMirror.map { _toDictionary($0, mapping: mapping) } ?? [:]
     
     var dict: [String : AnyObject] = [:]
     for (key, value) in mirror.children {
